@@ -72,12 +72,13 @@ const $perc = computed(() => {
             </div>
             <div class="md:w-2/4"></div>
         </div>
+
         <div
             class="container relative py-10 flex justify-between items-center"
             aria-label="controllers"
         >
             <div
-                class="h-[0.1rem] w-[100%] left-0 top-5 absolute bg-neutral-200"
+                class="h-[0.1rem] w-[calc(100%_-_10px)] left-2/4 -translate-x-2/4 top-5 absolute bg-neutral-200"
             >
                 <div
                     id="progress"
