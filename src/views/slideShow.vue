@@ -46,12 +46,12 @@ const $perc = computed(() => {
                     <img
                         :src="'/' + $TargetGallery.images.hero.small"
                         :alt="$TargetGallery.name"
-                        class="md:w-[80%]"
+                        class="md:w-[75%]"
                     />
                 </picture>
                 <button
                     role="button"
-                    class="absolute w-fit flex items-center top-5 md:top-[85%] left-5 gap-x-2 text-[0.66rem] tracking-[0.22rem] uppercase p-3 bg-p-black text-p-white hover:bg-p-black-lighter"
+                    class="absolute w-fit flex items-center top-5 lg:top-[85%] left-5 gap-x-2 text-[0.66rem] tracking-[0.22rem] uppercase p-3 bg-p-black text-p-white hover:bg-p-black-lighter"
                     type="button"
                     aria-label="view image"
                     @click="$imageBox = true"
@@ -69,12 +69,27 @@ const $perc = computed(() => {
                     </svg>
                     view image
                 </button>
+                <div
+                    aria-label="current image info"
+                    class="absolute bottom-0 w-[60%] lg:bottom-[50%] lg:right-[-13%] p-5 lg:pt-0 lg:min-h-[50%] lg:w-[50%] bg-p-white"
+                >
+                    <h2
+                        aria-level="2"
+                        aria-label="title"
+                        class="text-[1.3rem] sm:text-[3.2vw] lg:text-[2.8vw] font-bold"
+                    >
+                        {{ $TargetGallery.name }}
+                    </h2>
+                    <span aria-label="artist" class="text-[0.8rem] text-p-gray">
+                        {{ $TargetGallery.artist.name }}
+                    </span>
+                </div>
             </div>
             <div class="md:w-2/4"></div>
         </div>
 
         <div
-            class="container relative py-10 flex justify-between items-center"
+            class="container relative mt-4 py-10 flex justify-between items-center"
             aria-label="controllers"
         >
             <div
