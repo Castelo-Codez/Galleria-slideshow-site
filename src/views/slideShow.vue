@@ -36,8 +36,10 @@ const $perc = computed(() => {
 </script>
 <template>
     <main role="main" aria-label="main content">
-        <div class="container mt-10 flex flex-col md:flex-row">
-            <div class="md:w-2/4 relative" aria-label="image container">
+        <div
+            class="container items-center gap-20 mt-10 flex flex-col lg:flex-row"
+        >
+            <div class="lg:w-2/4 relative" aria-label="image container">
                 <picture class="block">
                     <source
                         :srcset="'/' + $TargetGallery.images.hero.large"
@@ -46,7 +48,7 @@ const $perc = computed(() => {
                     <img
                         :src="'/' + $TargetGallery.images.hero.small"
                         :alt="$TargetGallery.name"
-                        class="md:w-[75%]"
+                        class="lg:w-[75%]"
                     />
                 </picture>
                 <button
@@ -85,11 +87,29 @@ const $perc = computed(() => {
                     </span>
                 </div>
             </div>
-            <div class="md:w-2/4"></div>
+            <div class="lg:w-2/4 lg:pt-32">
+                <article
+                    class="lg:w-[70%] px-5 mx-auto"
+                    aria-label="article about current image"
+                >
+                    <p
+                        aria-label="current image description"
+                        class="text-p-gray leading-[1.8]"
+                    >
+                        {{ $TargetGallery.description }}
+                    </p>
+                    <a
+                        class="mt-20 uppercase text-[0.6rem] tracking-[.3rem] font-bold underline text-p-gray block"
+                        :href="$TargetGallery.source"
+                        aria-label="go to source"
+                        >go to source</a
+                    >
+                </article>
+            </div>
         </div>
 
         <div
-            class="container relative mt-4 py-10 flex justify-between items-center"
+            class="container relative lg:absolute lg:left-2/4 lg:bottom-0 lg:-translate-x-2/4 mt-4 py-10 flex justify-between items-center"
             aria-label="controllers"
         >
             <div
