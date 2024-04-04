@@ -72,6 +72,17 @@ const $perc = computed(() => {
                     view image
                 </button>
                 <div
+                    aria-label="image of artist"
+                    class="absolute -bottom-8 right-0 md:-bottom-8 md:-right-2"
+                >
+                    <img
+                        :src="'/' + $TargetGallery.artist.image"
+                        :alt="$TargetGallery.artist.name + 'image'"
+                        class="max-w-none w-full"
+                    />
+                </div>
+
+                <div
                     aria-label="current image info"
                     class="absolute bottom-0 w-[60%] lg:bottom-[50%] lg:right-[-13%] p-5 lg:pt-0 lg:min-h-[50%] lg:w-[50%] bg-p-white"
                 >
@@ -87,7 +98,7 @@ const $perc = computed(() => {
                     </span>
                 </div>
             </div>
-            <div class="lg:w-2/4 lg:pt-32">
+            <div class="lg:w-2/4 lg:pt-32 relative  ">
                 <article
                     class="lg:w-[70%] px-5 mx-auto"
                     aria-label="article about current image"
@@ -104,12 +115,18 @@ const $perc = computed(() => {
                         aria-label="go to source"
                         >go to source</a
                     >
+                    <time
+                        class="absolute top-[-10vw] lg:top-[-2%] font-bold text-[15vw] md:text-[10.5vw] z-[-1] tracking-[2rem] text-[#e7e7e7]"
+                        :datetime="$TargetGallery.year"
+                    >
+                        {{ $TargetGallery.year }}
+                    </time>
                 </article>
             </div>
         </div>
 
         <div
-            class="container relative lg:absolute lg:left-2/4 lg:bottom-0 lg:-translate-x-2/4 mt-4 py-10 flex justify-between items-center"
+            class="container relative 2xl:absolute 2xl:left-2/4 2xl:bottom-0 2xl:-translate-x-2/4 mt-4 py-10 flex justify-between items-center"
             aria-label="controllers"
         >
             <div
